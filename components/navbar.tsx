@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Container from '@/components/ui/container'
 import MainNav from '@/components/main-nav'
 import fetchCategories from '@/actions/get-cetegories'
+import NavbarActions from './navbar-actions'
 
 export const revalidate = 0
 export const dynamic = 'force-dynamic'
@@ -21,6 +22,7 @@ const Navbar = async () => {
                         </p>
                     </Link>
                     <MainNav data={categories} />
+                    <NavbarActions />
                 </div>
             </Container>
         </div>
