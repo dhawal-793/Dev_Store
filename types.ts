@@ -35,5 +35,5 @@ export interface Product {
     size: Size;
     color: Color;
     isFeatured: boolean;
-    image: Image[];
+    images: Image[];
 }
