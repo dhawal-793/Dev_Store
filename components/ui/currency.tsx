@@ -8,7 +8,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 });
 
 interface currencyProps {
-    value: string | number
+    value?: string | number
 }
 
 const Currency: FC<currencyProps> = ({ value }) => {
