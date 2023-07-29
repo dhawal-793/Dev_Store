@@ -1,8 +1,8 @@
 import Billboard from "@/components/billboard";
 import Container from "@/components/ui/container";
+import ProductList from "@/components/ui/product-list";
 import fetchBillboard from "@/actions/get-billboard";
 import fetchProducts from "@/actions/get-products";
-import ProductList from "@/components/product-list";
 
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';
