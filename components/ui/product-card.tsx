@@ -23,7 +23,10 @@ const ProductCard: FC<ProductCardProps> = ({ data }) => {
 
     return (
         <div className='p-3 space-y-4 bg-white border cursor-pointer group rounded-xl'>
-            <div className="relative bg-gray-100 aspect-square rounded-xl">
+            <div
+                onClick={handleClick}
+                className="relative bg-gray-100 aspect-square rounded-xl"
+            >
                 <Image
                     src={data?.images?.[0]?.url}
                     alt="Product Image"
@@ -33,7 +36,7 @@ const ProductCard: FC<ProductCardProps> = ({ data }) => {
                 <div className="absolute w-full px-6 transition opacity-0 group-hover:opacity-100 bottom-5">
                     <div className="flex justify-center gap-x-6">
                         <IconButton
-                            onClick={handleClick}
+                            onClick={() => { }}
                             icon={<Expand size={20} className='text-gray-600' />}
                         />
                         <IconButton
