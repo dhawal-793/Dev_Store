@@ -5,6 +5,8 @@ import fetchColors from '@/actions/get-colors';
 import fetchProducts from '@/actions/get-products';
 import fetchSizes from '@/actions/get-sizes';
 import Container from '@/components/ui/container';
+import ProductCard from '@/components/ui/product-card';
+import NoResults from '@/components/ui/no-results';
 import Billboard from '@/components/billboard';
 
 import Filter from "./components/filters"
@@ -29,7 +31,6 @@ const CategoryPage: FC<CategoryPageProps> = async ({ params: { categoryId }, sea
     const sizes = await fetchSizes();
     const category = await fetchCategory(categoryId);
 
-
     return (
         <div className='bg-white'>
             <Container>
@@ -48,6 +49,14 @@ const CategoryPage: FC<CategoryPageProps> = async ({ params: { categoryId }, sea
                                 name="Colors"
                                 data={colors}
                             />
+                        </div>
+                        <div className="mt-6 lg:col-span-4 lg:mt-0">
+                            {products.length === 0 && <NoResults />}
+                            <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
+                                {products.map(product => (
+                                    <ProductCard key={product.id} data={product} />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
