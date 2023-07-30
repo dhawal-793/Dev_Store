@@ -5,6 +5,7 @@ import fetchProducts from '@/actions/get-products'
 import ProductList from '@/components/ui/product-list'
 import Container from '@/components/ui/container'
 import Gallery from '@/components/gallery'
+import Info from '@/components/info'
 
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';
@@ -27,7 +28,7 @@ const ProductPage: FC<ProductPageProps> = async ({ params: { productId } }) => {
                     <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                         <Gallery images={product.images} />
                         <div className='px-4 mt-10 sm:mt-16 sm:px-0 lg:mt-0'>
-                            Info
+                            <Info data={product} />
                         </div>
                     </div>
                     <hr className='my-10' />
