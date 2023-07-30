@@ -1,9 +1,9 @@
 import { Category } from "@/types"
 
-const url = `${process.env.NEXT_PUBLIC_API_URL}/categories`
+const URL = `${process.env.NEXT_PUBLIC_API_URL}/categories`
 
 const fetchCategories = async (): Promise<Category[]> => {
-    const res = await fetch(url)
+    const res = await fetch(URL)
     return res.json()
     
 }
