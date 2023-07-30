@@ -5,6 +5,7 @@ import fetchColors from '@/actions/get-colors';
 import fetchProducts from '@/actions/get-products';
 import fetchSizes from '@/actions/get-sizes';
 import Container from '@/components/ui/container';
+import Billboard from '@/components/billboard';
 
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
@@ -30,9 +31,7 @@ const CategoryPage: FC<CategoryPageProps> = async ({ params: { categoryId }, sea
     return (
         <div className='bg-white'>
             <Container>
-                <div>
-                    Category
-                </div>
+                <Billboard data={category?.billboard} />
             </Container>
         </div>
     )
