@@ -10,7 +10,7 @@ const CategoryPage: FC<CategoryPageProps> = ({ params: { categoryId } }) => {
 
     return (
         <div>
-            {categoryId}
+            Category Page
         </div>
     )
 }
