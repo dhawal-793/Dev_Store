@@ -7,6 +7,8 @@ import fetchSizes from '@/actions/get-sizes';
 import Container from '@/components/ui/container';
 import Billboard from '@/components/billboard';
 
+import Filter from "./components/filters"
+
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
 
@@ -32,6 +34,23 @@ const CategoryPage: FC<CategoryPageProps> = async ({ params: { categoryId }, sea
         <div className='bg-white'>
             <Container>
                 <Billboard data={category?.billboard} />
+                <div className='px-4 pb-24 sm:px-6 lg:px-8'>
+                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+                        {/* Mobile Filters */}
+                        <div className="hidden lg:block">
+                            <Filter
+                                valueKey="sizeId"
+                                name="Sizes"
+                                data={sizes}
+                            />
+                            <Filter
+                                valueKey="colorId"
+                                name="Colors"
+                                data={colors}
+                            />
+                        </div>
+                    </div>
+                </div>
             </Container>
         </div>
     )
