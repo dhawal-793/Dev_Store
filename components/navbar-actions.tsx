@@ -3,6 +3,7 @@
 import { FC, useEffect, useState } from 'react'
 import { ShoppingBag } from 'lucide-react'
 
+import useCart from '@/hooks/use-cart'
 import Button from '@/components/ui/button'
 
 interface NavbarActionsProps {
@@ -12,14 +13,13 @@ interface NavbarActionsProps {
 const NavbarActions: FC<NavbarActionsProps> = ({ }) => {
 
     const [isMounted, setIsMounted] = useState(false)
+    const cart = useCart()
 
     useEffect(() => {
         setIsMounted(true)
     }, [])
 
-
     if (!isMounted) return null
-
 
     return (
         <div className="flex items-center ml-auto gap-x-4">
@@ -28,7 +28,7 @@ const NavbarActions: FC<NavbarActionsProps> = ({ }) => {
                     size={20}
                     color="white"
                 />
-                <span className='ml-2 text-sm font-medium text-white'>0</span>
+                <span className='ml-2 text-sm font-medium text-white'>{cart.items.length}</span>
             </Button>
         </div>
     )
