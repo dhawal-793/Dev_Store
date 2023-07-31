@@ -10,6 +10,7 @@ import NoResults from '@/components/ui/no-results';
 import Billboard from '@/components/billboard';
 
 import Filter from "./components/filters"
+import MobileFilters from './components/mobile-filters';
 
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
@@ -37,7 +38,7 @@ const CategoryPage: FC<CategoryPageProps> = async ({ params: { categoryId }, sea
                 <Billboard data={category?.billboard} />
                 <div className='px-4 pb-24 sm:px-6 lg:px-8'>
                     <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
-                        {/* Mobile Filters */}
+                        <MobileFilters sizes={sizes} colors={colors} />
                         <div className="hidden lg:block">
                             <Filter
                                 valueKey="sizeId"
