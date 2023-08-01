@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react'
 import useCart from '@/hooks/use-cart'
 import Container from '@/components/ui/container'
 
+import CartItem from './components/cart-item'
+
 const CartPage = () => {
     const [isMonted, setIsMonted] = useState<boolean>(false)
     const cart = useCart()
@@ -26,11 +28,12 @@ const CartPage = () => {
                             </p>
                             }
                             <ul>
-                                {
-                                    cart.items.map((item) => (
-                                        <p key={item.id}>{item.name}</p>
-                                    ))
-                                }
+                                {cart.items.map((item) => (
+                                    <CartItem
+                                        key={item.id}
+                                        data={item}
+                                    />
+                                ))}
                             </ul>
                         </div>
                     </div>
