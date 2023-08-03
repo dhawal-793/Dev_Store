@@ -13,6 +13,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
         return <button
             ref={ref}
             {...props}
+            disabled={disabled}
             className={cn(`w-auto bg-black border-transparent px-5 py-3 disabled:cursor-not-allowed disabled:opacity-50 text-white font-semibold hover:opacity-75 transition rounded-full`, className)}
         >
             {children}
