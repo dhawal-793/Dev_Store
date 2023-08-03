@@ -50,7 +50,13 @@ const Summary: FC<SummaryProps> = ({ }) => {
                     <Currency value={totalPrice} />
                 </div>
             </div>
-            <Button className='w-full mt-6' onClick={onCheckout}>Checkout</Button>
+            <Button
+                disabled={items.length === 0}
+                onClick={onCheckout}
+                className='w-full mt-6'
+            >
+                Checkout
+            </Button>
         </div>
     )
 }
