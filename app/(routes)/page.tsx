@@ -1,7 +1,7 @@
 import Billboard from "@/components/billboard";
 import Container from "@/components/ui/container";
 import ProductList from "@/components/ui/product-list";
-import fetchBillboard from "@/actions/get-billboard";
+import fetchFirstBillboards from "@/actions/get-first-billboard";
 import fetchProducts from "@/actions/get-products";
 
 export const revalidate = 0;
@@ -10,7 +10,8 @@ export const dynamic = 'force-dynamic';
 const Home = async () => {
 
   const featuredProducts = await fetchProducts({ isFeatured: true })
-  const billboard = await fetchBillboard('4bac3797-456b-41ef-84e6-0d8a64093544');
+  const billboard = await fetchFirstBillboards();
+
 
   return (
     <Container>
