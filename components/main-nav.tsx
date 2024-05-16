@@ -9,9 +9,10 @@ import { Category } from '@/types'
 
 interface MainNavProps {
     data: Category[]
+    className?: string
 }
 
-const MainNav: FC<MainNavProps> = ({ data }) => {
+const MainNav: FC<MainNavProps> = ({ data, className }) => {
     const pathname = usePathname()
 
 
@@ -22,7 +23,7 @@ const MainNav: FC<MainNavProps> = ({ data }) => {
     }))
 
     return (
-        <nav className='flex items-center mx-6 space-x-4 lg:space-x-6'>
+        <nav className={cn('flex items-center mx-6 space-x-4 lg:space-x-6', className)}>
             {routes.map(route => (
                 <Link
                     key={route.href}
